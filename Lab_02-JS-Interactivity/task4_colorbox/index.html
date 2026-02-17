@@ -1,0 +1,68 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Task 4 - Color Box Generator</title>
+  <link rel="stylesheet" href="../assets/common.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="container">
+    <div class="header">
+      <div>
+        <h1>Task 4 — Color Box Generator</h1>
+        <p class="subtitle">Add up to 3 colors (one per input), generate boxes, clear all.</p>
+      </div>
+      <a class="badge" href="../index.html">Back</a>
+    </div>
+
+    <section class="card">
+      <div class="row">
+        <div class="col">
+          <label for="c1">Color 1</label>
+          <input id="c1" placeholder="e.g., red or #ff0000" />
+        </div>
+        <div class="col">
+          <label for="c2">Color 2</label>
+          <input id="c2" placeholder="e.g., #00ff99" />
+        </div>
+        <div class="col">
+          <label for="c3">Color 3</label>
+          <input id="c3" placeholder="e.g., rgb(50,120,255)" />
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:14px">
+        <button type="button" id="btnAdd1">Add Color 1</button>
+        <button type="button" id="btnAdd2">Add Color 2</button>
+        <button type="button" id="btnAdd3">Add Color 3</button>
+        <button type="button" id="btnClear" class="secondary">Clear Boxes</button>
+      </div>
+
+      <hr/>
+
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <h3 style="margin-top:0">Generated Boxes</h3>
+            <div id="boxArea" class="boxArea"></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <h3 style="margin-top:0">Bonus: Browser / Window Info (BOM)</h3>
+            <div id="info" class="result"></div>
+            <button type="button" id="btnRefresh" class="secondary" style="margin-top:10px">Refresh Info</button>
+          </div>
+        </div>
+      </div>
+
+      <small class="help">Tip: Use any valid CSS color: name, hex, rgb(), hsl(), etc.</small>
+    </section>
+
+    <script src="./script.js"></script>
+  </main>
+</body>
+</html>

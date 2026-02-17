@@ -1,0 +1,58 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Task 2 - Interactive Calculator</title>
+  <link rel="stylesheet" href="../assets/common.css" />
+</head>
+<body>
+  <main class="container">
+    <div class="header">
+      <div>
+        <h1>Task 2 — Interactive Calculator</h1>
+        <p class="subtitle">Enter numbers, choose operation, and calculate.</p>
+      </div>
+      <a class="badge" href="../index.html">Back</a>
+    </div>
+
+    <section class="card">
+      <div class="row">
+        <div class="col">
+          <label for="num1">Number 1</label>
+          <input id="num1" type="number" step="any" placeholder="e.g., 10" />
+        </div>
+        <div class="col">
+          <label for="num2">Number 2</label>
+          <input id="num2" type="number" step="any" placeholder="e.g., 5" />
+        </div>
+        <div class="col">
+          <label for="op">Operation</label>
+          <select id="op">
+            <option value="add">Addition (+)</option>
+            <option value="sub">Subtraction (-)</option>
+            <option value="mul">Multiplication (×)</option>
+            <option value="div">Division (÷)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:14px">
+        <button id="btnCalc" type="button">Calculate</button>
+        <button id="btnClear" type="button" class="secondary">Clear</button>
+      </div>
+
+      <hr/>
+
+      <div id="resultBox" class="result">
+        <strong>Result:</strong>
+        <div id="resultText" class="subtitle">Waiting for input...</div>
+      </div>
+      <small class="help">Bonus: result box changes border color for positive vs negative.</small>
+    </section>
+
+    <script src="./script.js"></script>
+  </main>
+</body>
+</html>

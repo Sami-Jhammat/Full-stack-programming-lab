@@ -1,0 +1,44 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Task 1 - Dynamic Quiz</title>
+  <link rel="stylesheet" href="../assets/common.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="container">
+    <div class="header">
+      <div>
+        <h1>Task 1 — Dynamic Quiz</h1>
+        <p class="subtitle">Answer the questions and submit to see your score.</p>
+      </div>
+      <a class="badge" href="../index.html">Back</a>
+    </div>
+
+    <section class="card">
+      <form id="quizForm" novalidate>
+        <div id="questions"></div>
+
+        <div class="row" style="margin-top:14px">
+          <button type="button" id="btnSubmit">Submit Quiz</button>
+          <button type="button" id="btnReset" class="secondary">Reset Quiz</button>
+        </div>
+      </form>
+
+      <hr/>
+
+      <div id="resultBox" class="result" aria-live="polite">
+        <strong>Result:</strong>
+        <div id="resultText" class="subtitle">No attempt yet.</div>
+      </div>
+    </section>
+
+    <p class="footer">Uses variables, functions, conditional statements, and DOM manipulation.</p>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

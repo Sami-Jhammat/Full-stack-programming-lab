@@ -1,0 +1,65 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Task 5 - Form Validation</title>
+  <link rel="stylesheet" href="../assets/common.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="container">
+    <div class="header">
+      <div>
+        <h1>Task 5 — Form Validation</h1>
+        <p class="subtitle">Validate name, email, age, and password with functions & conditionals.</p>
+      </div>
+      <a class="badge" href="../index.html">Back</a>
+    </div>
+
+    <section class="card">
+      <form id="regForm" novalidate>
+        <div class="row">
+          <div class="col">
+            <label for="name">Name</label>
+            <input id="name" placeholder="Your full name" />
+            <div class="err" id="errName"></div>
+          </div>
+          <div class="col">
+            <label for="email">Email</label>
+            <input id="email" placeholder="example@gmail.com" />
+            <div class="err" id="errEmail"></div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label for="age">Age</label>
+            <input id="age" type="number" placeholder="18 - 60" />
+            <div class="err" id="errAge"></div>
+          </div>
+          <div class="col">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Minimum 6 characters" />
+            <div class="err" id="errPass"></div>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top:14px">
+          <button type="button" id="btnSubmit">Submit</button>
+          <button type="button" id="btnReset" class="secondary">Reset</button>
+        </div>
+      </form>
+
+      <hr/>
+      <div id="msg" class="result">
+        <strong>Status:</strong>
+        <div id="msgText" class="subtitle">Fill the form and submit.</div>
+      </div>
+    </section>
+
+    <script src="./script.js"></script>
+  </main>
+</body>
+</html>

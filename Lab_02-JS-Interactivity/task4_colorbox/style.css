@@ -1,0 +1,25 @@
+
+.boxArea{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap:12px;
+  margin-top:10px;
+}
+.colorBox{
+  height:90px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 10px 22px rgba(0,0,0,.25);
+  position:relative;
+  overflow:hidden;
+}
+.colorBox span{
+  position:absolute;
+  left:10px;
+  bottom:8px;
+  font-size:12px;
+  background:rgba(0,0,0,.35);
+  border:1px solid rgba(255,255,255,.14);
+  padding:4px 8px;
+  border-radius:999px;
+}
