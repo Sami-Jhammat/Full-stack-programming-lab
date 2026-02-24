@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lab 03 — Task 1: Student Management</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <h1>Task 1 — Student Management System (ES6 Class)</h1>
+        <div class="meta">Student: <b>sami jhammat</b> • Roll No: <b>232002</b></div>
+      </div>
+      <nav class="nav">
+        <a class="chip" href="index.html">Home</a>
+        <a class="chip" href="task2.html">Task 2</a>
+        <a class="chip" href="task3.html">Task 3</a>
+      </nav>
+    </header>
+
+    <section class="grid">
+      <div class="card half">
+        <h2>Create Student</h2>
+        <p>Uses <code>let</code>/<code>const</code> properly and stores courses as an array. Students are displayed via template literals and <code>innerHTML</code>.</p>
+        <div class="row">
+          <input id="sid" type="number" placeholder="ID (e.g., 1)" />
+          <input id="sname" type="text" placeholder="Name" />
+        </div>
+        <div class="row" style="margin-top:10px">
+          <input id="ssemester" type="text" placeholder="Semester (e.g., 6th)" />
+          <input id="scourses" type="text" placeholder="Courses (comma separated)" />
+        </div>
+        <div class="row" style="margin-top:12px">
+          <button id="addStudentBtn">Add Student</button>
+          <button class="danger" id="resetBtn">Reset to Default 3</button>
+        </div>
+        <small class="muted">Tip: Courses input example → JS, HTML, CSS</small>
+      </div>
+
+      <div class="card half">
+        <h2>Rendered Output</h2>
+        <div id="summary" class="codebox">Loading...</div>
+      </div>
+
+      <div class="card">
+        <h2>All Students</h2>
+        <div id="studentsContainer"></div>
+      </div>
+    </section>
+
+    <div class="footer">Lab 03 • Task 1 • sami jhammat (232002)</div>
+  </div>
+
+  <script src="js/task1.js"></script>
+</body>
+</html>

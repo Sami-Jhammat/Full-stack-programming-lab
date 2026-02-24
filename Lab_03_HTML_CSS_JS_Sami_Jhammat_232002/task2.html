@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lab 03 — Task 2: Shopping Cart</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <h1>Task 2 — Online Shopping Cart (Rest • Spread • Destructuring)</h1>
+        <div class="meta">Student: <b>sami jhammat</b> • Roll No: <b>232002</b></div>
+      </div>
+      <nav class="nav">
+        <a class="chip" href="index.html">Home</a>
+        <a class="chip" href="task1.html">Task 1</a>
+        <a class="chip" href="task3.html">Task 3</a>
+      </nav>
+    </header>
+
+    <section class="grid">
+      <div class="card half">
+        <h2>Add items to cart</h2>
+        <p><b>Rest operator</b> is used in <code>addToCart(...items)</code>. Cart is stored in an array and cloned using <b>Spread operator</b>.</p>
+        <div class="row">
+          <input id="itemName" type="text" placeholder="Item name (e.g., Laptop Bag)" />
+          <input id="itemPrice" type="number" placeholder="Price (e.g., 2500)" />
+        </div>
+        <div class="row" style="margin-top:12px">
+          <button id="addOneBtn">Add One Item</button>
+          <button id="addBundleBtn">Add Sample Bundle (3 items)</button>
+          <button class="danger" id="clearBtn">Clear Cart</button>
+        </div>
+        <small class="muted">Output demonstrates: total items, first item, remaining items, cloned cart.</small>
+      </div>
+
+      <div class="card half">
+        <h2>Cart Output</h2>
+        <div id="cartOutput" class="codebox">Cart is empty.</div>
+      </div>
+
+      <div class="card">
+        <h2>Cart Table</h2>
+        <div id="cartTable"></div>
+      </div>
+    </section>
+
+    <div class="footer">Lab 03 • Task 2 • sami jhammat (232002)</div>
+  </div>
+
+  <script src="js/task2.js"></script>
+</body>
+</html>

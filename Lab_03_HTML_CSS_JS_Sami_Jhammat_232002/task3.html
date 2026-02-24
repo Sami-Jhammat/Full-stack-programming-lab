@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lab 03 — Task 3: Async Data Loader</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <h1>Task 3 — Asynchronous Data Loader (Promises)</h1>
+        <div class="meta">Student: <b>sami jhammat</b> • Roll No: <b>232002</b></div>
+      </div>
+      <nav class="nav">
+        <a class="chip" href="index.html">Home</a>
+        <a class="chip" href="task1.html">Task 1</a>
+        <a class="chip" href="task2.html">Task 2</a>
+      </nav>
+    </header>
+
+    <section class="grid">
+      <div class="card half">
+        <h2>Load Users</h2>
+        <p><code>fetchUsers()</code> returns a Promise. It uses <code>setTimeout</code> with a <b>3 seconds</b> delay. You can simulate failure using the checkbox.</p>
+        <div class="row">
+          <label class="badge">
+            <input id="failFlag" type="checkbox" style="transform:translateY(1px)" />
+            Simulate failure (reject)
+          </label>
+        </div>
+        <div class="row" style="margin-top:12px">
+          <button id="loadBtn">Fetch Users (3s)</button>
+          <button class="danger" id="resetViewBtn">Clear Output</button>
+        </div>
+        <small class="muted">Uses <code>.then()</code> and <code>.catch()</code> and updates HTML dynamically.</small>
+      </div>
+
+      <div class="card half">
+        <h2>Status</h2>
+        <div id="status" class="codebox">Click “Fetch Users (3s)” to start.</div>
+      </div>
+
+      <div class="card">
+        <h2>Results</h2>
+        <div id="results"></div>
+      </div>
+    </section>
+
+    <div class="footer">Lab 03 • Task 3 • sami jhammat (232002)</div>
+  </div>
+
+  <script src="js/task3.js"></script>
+</body>
+</html>
