@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Task 1 — Dynamic List Manager</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <span class="badge">Lab Task 1</span>
+      <h1>Dynamic List Manager</h1>
+      <p>Add items to a list and remove them with a <b>Delete</b> button. Items highlight on hover.</p>
+
+      <div class="row" style="align-items:flex-end;">
+        <div style="flex:1;min-width:240px;">
+          <label class="small" for="itemText">Item</label>
+          <input id="itemText" type="text" placeholder="e.g., Buy milk" />
+          <div class="small" style="margin-top:6px;">Press <span class="kbd">Enter</span> to add quickly.</div>
+        </div>
+        <button id="addBtn" class="btn primary" type="button">Add Item</button>
+        <button id="clearBtn" class="btn danger" type="button">Clear All</button>
+      </div>
+
+      <hr />
+
+      <ul id="items" class="list" aria-live="polite"></ul>
+
+      <p id="emptyState" class="footer">No items yet — add your first one above.</p>
+      <p class="footer"><a href="../index.html">← Back to main menu</a></p>
+    </div>
+  </div>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- External JS -->
+  <script src="task1.js"></script>
+</body>
+</html>

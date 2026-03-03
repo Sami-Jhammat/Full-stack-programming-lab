@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Task 2 — Animated Image Gallery</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+  <style>
+    /* Internal CSS for this task */
+    .gallery {
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:12px;
+      align-items:center;
+    }
+    .frame{
+      position:relative;
+      overflow:hidden;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background:#0b1224;
+      min-height:320px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .frame img{
+      width:100%;
+      height:360px;
+      object-fit:cover;
+      display:none; /* we'll fade it in */
+    }
+    .caption{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.4;
+    }
+    .caption b{color:var(--text)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <span class="badge">Lab Task 2</span>
+      <h1>Animated Image Gallery</h1>
+      <p>Click <b>Previous</b>/<b>Next</b> to fade images in/out and update captions (with chaining).</p>
+
+      <div class="gallery">
+        <div class="frame">
+          <img id="galleryImg" alt="Gallery image" />
+        </div>
+
+        <div class="row" style="justify-content:space-between;align-items:center;">
+          <div>
+            <div id="caption" class="caption"></div>
+            <div class="small">Images are loaded from a public placeholder service.</div>
+          </div>
+          <div class="row">
+            <button id="prevBtn" class="btn" type="button">← Previous</button>
+            <button id="nextBtn" class="btn primary" type="button">Next →</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="footer"><a href="../index.html">← Back to main menu</a></p>
+    </div>
+  </div>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Internal JS (script in same HTML file) -->
+  <script>
+    // Task 2 — Animated Image Gallery
+    // Features: Effects & Animations, DOM Manipulation, Chaining
+
+    $(function () {
+      const slides = [
+        { id: 1015, title: "Mountain River", note: "Fade transition using jQuery." },
+        { id: 1025, title: "Parrot Close-up", note: "Caption changes dynamically." },
+        { id: 1035, title: "Forest Road", note: "Chaining: fadeOut → change → fadeIn." },
+        { id: 1043, title: "City Skyline", note: "Smooth UI with minimal code." }
+      ];
+
+      let i = 0;
+      const $img = $("#galleryImg");
+      const $caption = $("#caption");
+
+      function render() {
+        const s = slides[i];
+        const url = "https://picsum.photos/id/" + s.id + "/1100/600";
+        const text = "<b>" + s.title + "</b> — " + s.note + " (Image #" + s.id + ")";
+
+        // Chaining + effects
+        $img.stop(true, true)
+          .fadeOut(200, function () {
+            $img.attr("src", url);
+          })
+          .promise()
+          .done(function () {
+            // When src is set, load then fade in
+            $img.off("load").on("load", function () {
+              $img.fadeIn(250);
+            });
+          });
+
+        $caption.stop(true, true).fadeOut(120).html(text).fadeIn(160);
+      }
+
+      $("#prevBtn").on("click", function () {
+        i = (i - 1 + slides.length) % slides.length;
+        render();
+      });
+
+      $("#nextBtn").on("click", function () {
+        i = (i + 1) % slides.length;
+        render();
+      });
+
+      // Initial render
+      render();
+    });
+  </script>
+</body>
+</html>
